@@ -1,0 +1,109 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #fffcf2
+}
+
+.mainContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0.5rem .5rem .5rem 2rem;
+    background-color: #fffcf2;
+    z-index: 100;
+}   
+
+.navLinks{
+    display: flex;
+    list-style: none;
+    height: 100%;
+    justify-content: space-around;
+    align-items: flex-end;
+    width: 40%;
+    margin-right: 3rem;
+}
+
+.navLinks li a {
+    color: black;
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 0.3rem;
+    border-radius: 1rem;
+    background-color: transparent;
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start;
+}
+  
+.navLinks li a:hover {
+    color: #ad9551;
+    background-color: #d9d9d9;
+}
+  
+/* Media query for smaller screens */
+@media(300px <= width <= 600px) {
+    .navLinks li a {
+        font-size: 0.8rem;
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    .navLinks li a:hover {
+        font-size: 0.8rem; /* stays same on hover for small screens */
+    }
+}
+  
+
+.logoContainer h1{
+    font-size: 1.5rem;
+    color: #ad9551;
+    cursor: pointer;
+}
+
+.logoContainer{
+    height: max-content;
+}
+
+/* .logoContainer:hover{
+    border: 2px solid #ad9551;
+    transition: 0.2s ease-in-out;
+    border-radius: 1rem;
+
+} */
+
+@media(300px <= width <= 600px){
+    .logoContainer h1{
+        width: 100%;
+        justify-content: space-around;
+        font-size: .8rem;
+    }
+   
+}
+
+.logoContainer a{
+    width: max-content;
+    display: flex;
+    column-gap: .5rem;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+
+.logoContainer a img{
+    width: 3rem;
+    height: 3rem;
+}
+
+
+
+  
+

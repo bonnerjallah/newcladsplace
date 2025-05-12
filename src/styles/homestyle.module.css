@@ -1,0 +1,589 @@
+.mainContainer{
+    padding-bottom: 2rem;
+}
+
+
+.bookingContainer{
+    position: absolute;   
+    left: 14%;
+    border-radius: 0 0 5rem 1rem;
+    width: 45%;
+    height: max-content;
+    background-color: #fffcf2;
+    padding: 4rem 4rem 1rem 4rem;
+    opacity: 0.9;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    }
+
+.heroSection{
+    height: 87vh;
+}
+
+.bookingContainer h1{
+    font-size: 3rem;
+    color: #ad9551;
+    font-weight: 600;
+}
+
+.bookingContainer > :first-child{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.imageSliderContainer{
+    border-radius: 0 0 0 5rem;
+    contain: content;
+    height: 85dvh;
+    margin-left: 2rem;
+    position: absolute;
+}
+
+
+.imageSliderContainer img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0 0 0 5rem;
+}
+
+.searchContainer{
+    border: 2px solid #ad9551;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .4rem;
+    border-radius: 1rem;
+    margin-top: -1rem;
+}
+
+.searchContainer div p{
+    font-size: 1.3rem;
+}
+
+.bookingBttn{
+    height: 100%;
+    width: 20%;
+    border-radius: 1rem;
+    border: none;
+    cursor: pointer;
+    background-color: #ad9551;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.bookingBttn:hover{
+    background-color: #d9d9d9;  
+    color: #ad9551;
+    transition: 0.2s ease-in-out;
+}
+
+.imageSliderImage{
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    flex-grow: 0;
+    transition: translate 1s ease-in-out;
+}
+
+.roomsPriceContainer{
+    background-color: #ab9d78;
+    border-radius: 50%;
+    width: 10%;
+    height: 15%;
+    position: absolute;
+    bottom: 7rem;
+    right: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: white;
+}
+
+@media(600px <= width <= 1030px){
+    .searchContainer{
+        display: flex;
+        row-gap: 1rem;
+        flex-wrap: wrap;
+    }
+    .searchContainer div{
+        flex-wrap: wrap;
+    }
+    .searchContainer div p{
+        font-size: .9rem;
+    }
+
+    .bookingBttn{
+        font-size: .9rem;
+        height: 2.5rem;
+        width: 50%;
+    }
+}
+
+@media(300px <= width <= 600px) {
+
+    .heroSection{
+        height: 70vh;
+    }
+
+    .imageSliderContainer{
+        height: 50dvh;
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .bookingContainer{
+        left: 14%;
+        border-radius: 0 0 5rem 1rem;
+        width: 75%;
+        height: max-content;
+        background-color: #fffcf2;
+        position: relative
+    }
+
+    .bookingContainer h1{
+        font-size: 1rem;
+        color: #ad9551;
+        font-weight: 600;
+        margin-top: -3.5rem;
+    }
+
+    .bookingContainer > :first-child{
+        display: flex;
+        flex-direction: column;
+        row-gap: .5rem;
+    }
+
+    .bookingContainer > :first-child p{
+        font-size: 1rem;
+    }
+
+    .searchContainer{
+        border: 2px solid #ad9551;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 30%;
+        width: 100%;
+        padding: .4rem;
+        border-radius: 1rem;
+        font-size: .7rem;
+        margin-top: -3rem;
+        margin-left: -4rem;
+        position: absolute;
+        top: 24rem;
+        background-color: #fffcf2;
+
+    }
+
+    .searchContainer div p{
+        font-size: .7rem ;
+    }
+
+    .bookingBttn{
+        font-size: 1rem;
+        height: 100%;
+    }
+
+    .roomsPriceContainer{
+       display: none;
+    }
+
+}
+
+.welcomeContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    margin: 2rem 0;
+    padding: 2rem;
+    border-top: 1px solid #ad9551;
+    border-bottom: 1px solid #ad9551;
+}
+
+.welcomeContainer h1{
+    font-size: 4rem;
+    color: #ad9551;
+    font-weight: 600;
+}
+
+.welcomeContainer p{
+    font-size: 1.2rem;
+    color: #ad9551;
+    font-weight: 400;
+    width: 60%;
+    display: flex;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.dateRange{
+    background-color: yellow;
+    position: absolute;
+    bottom: -14rem;
+}
+
+.addressContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    /* border: 2px solid red; */
+}
+
+.addressWrapper p{
+    font-size: 1rem;
+    color: #ad9551;
+    display: flex;
+    width: max-content;
+}
+
+.subLinksWrapper{
+    display: flex;
+    width: max-content;
+    margin-right: 1rem;
+    /* border: 2px solid green; */
+
+}
+
+.subLinksWrapper ul{
+    display: flex;
+}
+
+.subLinksWrapper ul li {
+    list-style: none;
+    padding: 1rem;
+    font-size: 1rem;
+    color: #ad9551;
+    border-bottom: 2px solid #ad9551;
+    display: inline-block; /* needed to make border fit the text width */
+    margin-left: 1rem;
+    margin-right: 1rem;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.overviewDropdown{
+    display: none;
+}
+
+.overviewDropdown h2{
+    display: flex;
+    column-gap: .5rem;
+    font-size: 1rem;
+    color: #ad9551;
+}
+
+
+.offerContainer{
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    margin: auto;
+    flex-wrap: wrap;
+    row-gap: 2rem;
+    border-bottom: 1px solid #ad9551;
+}
+
+.offerContainer div{
+    display: flex;
+    width: 10%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1rem;
+    column-gap: 1rem;
+    margin: auto;
+    font-size: .7rem;
+}
+
+.offerContainer div p{
+    color: #ad9551;
+    display: flex;
+    text-align: center;
+}
+
+.icons{
+    width: 2rem;
+}
+
+.closeOfferContainer{
+    height: 7rem;
+    position: relative;
+}
+
+.closeOfferContainerHeadderWrapper{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    column-gap: 4rem;
+    margin-bottom: .5rem;
+    position: relative;
+    font-size: .7rem;
+}
+
+.closerofferBodyWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 1rem;
+    display: none;
+}
+
+.closerofferBodyWrapperOpen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 1rem;
+    margin-bottom: 10rem;
+}
+
+.closerofferBodyWrapper div div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: .7rem;
+    border: .7px solid #ad9551;
+}
+
+.displayButton{
+    position: absolute;
+    left: 17rem;
+    background-color: #ad9551;
+    border-radius: 5rem;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+
+@media(300px <= width <= 600px) {
+    .addressContainer{
+        display: flex;
+        justify-content: space-around;
+        margin-top: -4rem;
+    }
+
+    .addressWrapper p{
+        font-size: .8rem;
+    }
+
+    .subLinksWrapper ul {
+        display: none;
+    }   
+
+    .overviewDropdown{
+        display: block;
+    }
+
+    .welcomeContainer p{
+        font-size: 1rem;
+        width: 100%;
+    }
+}
+
+@media(300px <= width <= 650px){
+    .offerContainer{
+        display: none;
+    }
+
+    .closeOfferContainerHeadderWrapper{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        column-gap: 4rem;
+        margin-bottom: .5rem;
+        position: relative;
+    }
+
+    .displayButton{
+        height: 2rem;
+        width: 2rem;
+        border-radius: 5rem;
+        border: none;
+        cursor: pointer;
+        display: block;
+        top: -1rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@media(600px <= width <= 695px){
+    .subLinksWrapper ul li{
+        font-size: .9rem;
+    }
+
+    .addressContainer{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .addressWrapper p{
+        font-size: .8rem;
+    }
+}
+
+.galleryContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+    grid-auto-rows: 200px; /* Default row height */
+    gap: 1rem;
+    padding: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+  
+.imageWrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border: 2px solid #ad9551;
+}
+  
+.imageWrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+  
+/* Span settings */
+.imageOne {
+    grid-column: span 2; /* Take 2 columns */
+    grid-row: span 2;    /* Take 2 rows */
+}
+
+.imageTwo {
+    grid-column: span 2; /* Take 2 columns */
+    grid-row: span 3;    /* Take 1 row */
+}
+
+.imageThree {
+    grid-column: span 2; /* Take 2 columns */
+    grid-row: span 2;    /* Take 2 rows */
+}
+
+.imageFour {
+    grid-column: span 1; /* Take 2 columns */
+    grid-row: span 3;    /* Take 2 rows */
+}
+
+.imageFive {
+    grid-column: span 1; /* Take 2 columns */
+    grid-row: span 2;    /* Take 2 rows */
+}
+
+.imageSix {
+    grid-column: span 1; /* Take 2 columns */
+    grid-row: span 3;    /* Take 2 rows */
+}
+
+.imageSeven {
+    grid-column: span 1; /* Take 2 columns */
+    grid-row: span 2;    /* Take 2 rows */
+}
+
+.imageEight {
+    grid-column: span 1; /* Take 2 columns */
+    grid-row: span 1;    /* Take 2 rows */
+}
+
+.imageNine {
+    grid-column: span 1; /* Take 2 columns */
+    grid-row: span 1;    /* Take 2 rows */
+}
+
+.imageTen {
+    grid-column: span 1; /* Take 2 columns */
+    grid-row: span 3;    /* Take 2 rows */
+}
+
+.imageEleven {
+    grid-column: span 1; /* Take 2 columns */
+    grid-row: span 3;    /* Take 2 rows */
+}
+
+.imageTwelve {
+    grid-column: span 2; /* Take 2 columns */
+    grid-row: span 2;    /* Take 2 rows */
+}
+  
+@media(300px <= width <= 900px) {
+    .galleryContainer {
+        grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
+        grid-auto-rows: 200px; /* Default row height */
+        gap: 1rem;
+        padding: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .imageOne {
+        grid-column: span 1; /* Take 2 columns */
+        grid-row: span 1;    /* Take 2 rows */
+    }
+
+    .imageTwo {
+        grid-column: span 1; /* Take 2 columns */
+        grid-row: span 1;    /* Take 1 row */
+    }
+
+    .imageThree {
+        grid-column: span 1; /* Take 2 columns */
+        grid-row: span 1;    /* Take 2 rows */
+    }
+
+    .imageFour {
+        grid-column: span 1; /* Take 2 columns */
+        grid-row: span 1;    /* Take 2 rows */
+    }
+
+    .imageFive {
+        grid-column: span 1; /* Take 2 columns */
+        grid-row: span 1;    /* Take 2 rows */
+    }
+
+    .imageSix {
+        grid-column: span 1; /* Take 2 columns */
+        grid-row: span 1;    /* Take 2 rows */
+    }
+
+    .imageSeven {
+        grid-column: span 1; /* Take 2 columns */
+        grid-row: span 1;    /* Take 2 rows */
+    }
+
+    .imageEight {
+        grid-column: span 1; /* Take 2 columns */
+        grid-row: span 1;    /* Take 2 rows */
+    }
+
+    .imageNine {
+        grid-column: span 1; /* Take 2 columns */
+        grid-row: span 1;    /* Take 2 rows */
+    }
+
+    .imageTen {
+        grid-column: span 1; /* Take 2 columns */
+        grid-row: span 1;    /* Take 2 rows */
+    }
+
+    .imageEleven {
+        grid-column: span 1; /* Take 2 columns */
+        grid-row: span 1;    /* Take 2 rows */
+    }
+
+    .imageTwelve {
+        grid-column: span 1; /* Take 2 columns */
+        grid-row: span 1;    /* Take 2 rows */
+    }
+}
+
+
