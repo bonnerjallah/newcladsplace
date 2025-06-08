@@ -32,7 +32,7 @@ body{
 
 .navLinks li a {
     color: black;
-    font-size: 1rem;
+    font-size: clamp(.2rem, 1.5vw, 1.5rem);
     text-decoration: none;
     padding: 0.3rem;
     border-radius: 1rem;

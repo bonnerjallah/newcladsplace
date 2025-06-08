@@ -1,0 +1,110 @@
+.firstContainer{
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.MainContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.headerContainer{
+    background-image: url("../images/modu2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100dvh;
+    width: 100%;
+    opacity: .5;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 3rem;
+}
+
+.headerContainer::before{
+    content: "";
+    display: block;
+    position: absolute;
+    border-radius: 100% 60%;
+    width: 55%;
+    height: 55%;
+    background-color: #fffcf2;
+    transform: translate(100%, 100%);
+    z-index: 2;
+}
+
+.headerContainer::after{
+    content: "";
+    display: block;
+    position: absolute;
+    border-radius: 100% 60%;
+    width: 80%;
+    height: 55%;
+    background-color: #fffcf2;
+    transform: translate(-7%, 100%);
+    z-index: 99;
+}
+    
+
+
+.header h1{
+    position: absolute;
+    top: 50%; /* initial off-screen position */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: clamp(2rem, 1vh, 1.5rem);
+    animation: headerSlideIn 1s ease-in-out 0.3s 1 normal forwards;
+    z-index: 111;
+}
+
+@keyframes headerSlideIn {
+    0% {
+        bottom: -100%;
+        opacity: 0;
+    }
+    100% {
+        bottom: 0rem; 
+        opacity: 1;
+    }
+}
+
+.aboutSubContainer{
+    width: 80%;
+    flex-direction: column;
+    align-self: center;
+    font-size: clamp(.9rem, 1.7vw, 2.5rem);
+    background-color: #ede0d4;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-top: -2rem;
+    margin-bottom: 5rem;
+
+}
+
+.capitalizedParagraph {
+  line-height: 3rem;
+}
+
+
+.aboutImage {
+  float: left;
+  margin: 0 0 1rem 1rem; 
+  max-width: 200px;
+}
+
+.capitalizedParagraph::first-letter {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #ad9551; 
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+@media(300px <= width <= 600px) {
+    .capitalizedParagraph {
+        line-height: 2rem;
+    }
+}

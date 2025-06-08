@@ -1,4 +1,3 @@
-import React from 'react'
 import { useEffect, useState } from 'react'
 
 import homestyle from "../styles/homestyle.module.css"
@@ -45,6 +44,7 @@ const ImageSlider = ({imageUrls}) => {
             src={url}
             className={homestyle.imageSliderImage}
             style={{translate: `${-100 * currentIndex}%`}}
+            loading='lazy'
             />
           ))}
         </div>

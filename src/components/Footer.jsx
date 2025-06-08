@@ -7,9 +7,7 @@ const Footer = () => {
   return (
     <div className={footerStyle.MainContainer}>
         <div>
-            <div>
-                <p style={{fontSize: "1.2rem"}}>&copy; 2025 Clad's Place. All rights reserved.</p>
-            </div>
+            
         
             <ul>
                 <li><NavLink to="/">Home</NavLink></li>
@@ -18,6 +16,10 @@ const Footer = () => {
                 <li><NavLink>Privacy Policy</NavLink></li>
                 <li><NavLink>Terms of Service</NavLink></li>
             </ul>
+
+            <div>
+                <p>&copy; 2025 Clad's Place. All rights reserved.</p>
+            </div>
         </div>
 
         <div>

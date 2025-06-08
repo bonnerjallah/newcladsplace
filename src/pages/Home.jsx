@@ -11,6 +11,8 @@ import homestyle from "../styles/homestyle.module.css"
 import ImageSlider from '../components/ImageSlider'
 
 import Footer from '../components/Footer'
+import ScrollToTop from '../components/ScrollToTop';
+
 
 import ayo1 from "/images/ayo1.png"
 import ayo3 from "/images/ayo3.jpg"
@@ -32,8 +34,8 @@ const Home = () => {
   const calendarRef = useRef(null);
 
 
- const [openCalendar, setOpenCalendar] = useState(false);
-const [state, setState] = useState([
+  const [openCalendar, setOpenCalendar] = useState(false);
+  const [state, setState] = useState([
   {
     startDate: new Date(),
     endDate: new Date(),
@@ -52,7 +54,7 @@ const hasSelectedDates = state[0].startDate && state[0].endDate;
 
 
 
- useEffect(() => {
+  useEffect(() => {
   
     const handleClickOutside = (event) => {
       if (calendarRef.current && !calendarRef.current.contains(event.target)) {
@@ -73,7 +75,9 @@ const hasSelectedDates = state[0].startDate && state[0].endDate;
 
   return (
     <div className={homestyle.mainContainer}>
-      
+      <ScrollToTop />
+
+
       <div className={homestyle.heroSection}>
         <div className={homestyle.imageSliderContainer}>
           <ImageSlider imageUrls = {Images} />
@@ -115,8 +119,37 @@ const hasSelectedDates = state[0].startDate && state[0].endDate;
            
             <div style={{display: "flex", gap: "10px", alignItems: "center", cursor: "pointer"}}>
               <Users />
-              <p onClick={() => setCounter(prev => prev + 1)} style={{cursor: "pointer", display: "flex", gap: ".5rem", alignItems: "center"}}>
-                Guest  <span style={{backgroundColor: "#ad9551", width:"2rem", display: "flex", justifyContent:"center", alignItems: "center", borderRadius:".5rem"}}> - </span > {counter} <span style={{backgroundColor: "#ad9551", width:"2rem", display: "flex", justifyContent:"center", alignItems: "center", borderRadius:".5rem", marginRight:".5rem"}}> + </span> 
+              <p style={{cursor: "pointer", display: "flex", gap: ".5rem", alignItems: "center"}}>
+                Guest  
+                <span
+                  onClick={() => setCounter(prev => (prev > 0 ? prev - 1 : 0))}
+                  style={{
+                    backgroundColor: "#ad9551",
+                    width: "2rem",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    borderRadius: ".5rem"
+                  }}
+                >
+                  -
+                </span>
+                {counter}
+                <span
+                  onClick={() => setCounter(prev => prev + 1)}
+                  style={{
+                    backgroundColor: "#ad9551",
+                    width: "2rem",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    borderRadius: ".5rem",
+                    marginRight: ".5rem"
+                  }}
+                >
+                  +
+                </span>
+
               </p>
             </div>
             <button className={homestyle.bookingBttn}>Book</button>

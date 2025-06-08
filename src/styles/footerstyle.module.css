@@ -5,14 +5,18 @@
     position: relative;
 }
 
+.MainContainer > :first-child div p{
+    font-size: clamp(.9rem, 1vw, 3rem);
+    margin-top: 2.5rem;
+}
+
 .MainContainer > :first-child ul{
     display: flex;
     flex-direction: column;
     gap: 1rem;
     list-style: none;
-    font-size: 1.5rem;
+    font-size: clamp(.9rem, 1vh, 1.5rem);
     padding: 0.5rem;
-    margin-top: ;
 
 }
 
@@ -37,7 +41,7 @@
     row-gap: 1rem;
     cursor: pointer;
     position: absolute;
-    bottom: 3rem;
+    bottom: 6rem;
     right: 2rem;
 }
 
@@ -55,4 +59,8 @@
 .MainContainer > :last-child p:hover{
     color: black;
     background-color: #ad9551;
+}
+
+.footerContainer{
+    border: 2px solid red;
 }
