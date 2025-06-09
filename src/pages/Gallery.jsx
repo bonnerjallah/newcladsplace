@@ -1,11 +1,11 @@
 import { useRef, useState } from "react"
 import gallerystyle from "../styles/gallerystyle.module.css"
-import { Wifi, TvMinimal, Utensils, CookingPot, Sofa, AirVent, Hamburger, Beer, Refrigerator, Store, ChevronDown, ChevronUp, Plus, Minus, CircleX, WifiHigh, AirVentIcon   } from 'lucide-react';
+import { Wifi, TvMinimal, Utensils, CookingPot, Sofa, Refrigerator, CircleX, SquarePlay , AirVentIcon   } from 'lucide-react';
 
 
 import GalleryImageSlider from "../components/GalleryImageSlider"
 
-
+import tourVid from "/tourvid.mp4"
 
 import ayobedroomOne from "/images/galleryImages/AyoImages/ayoBedRoomOne.jpg"
 import ayobedroomtwo from "/images/galleryImages/AyoImages/ayoBedRoomTwo.jpg"
@@ -113,6 +113,7 @@ const imagesFileName = [...ayoImages, ...moduImages]
 const Gallery = () => {
 
   const dialogRef = useRef(null);
+  const videoDialogRef = useRef(null);
   const [activeImage, setActiveImage] = useState(null);
   const [ayoActive , setAyoActive] = useState(false);
   const [moduActive , setModuActive] = useState(false);
@@ -150,8 +151,15 @@ const Gallery = () => {
   const handleCloseDialog = () => {
     setActiveImage(null);
     dialogRef.current.close();
+    videoDialogRef.current.close();
     setAyoActive(false);
     setModuActive(false);
+  }
+
+  const handleCloseVideoDialog = () => {
+    console.log("video dialog closed");
+    videoDialogRef.current.close();
+    
   }
 
   const handleAyoHeaderClick = () => {
@@ -183,6 +191,24 @@ const Gallery = () => {
       <div className={gallerystyle.roomDisContainer}>
         <h2 onClick={handleAyoHeaderClick}>The Ayo</h2>
         <h2 onClick={handleModuHeaderClick}>The Modu</h2>
+
+        <div className={gallerystyle.videoContainer} onClick={() => videoDialogRef.current.showModal()}>
+
+          <SquarePlay />
+
+        </div>
+        <dialog ref={videoDialogRef} className={gallerystyle.videoDialog}>
+          <CircleX stroke="red" size={50} onClick={handleCloseVideoDialog} style={{position: "absolute", zIndex:"22", cursor:"pointer"}} />
+          <video
+            controls
+            muted
+            poster="/images/yourThumbnail.jpg" 
+            className={gallerystyle.videoPlayer}
+          >
+          <source src={tourVid} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </dialog>        
       </div>
 
       <div className={gallerystyle.imageContainer}>
@@ -233,6 +259,7 @@ const Gallery = () => {
                   <div className={gallerystyle.offerRightSide}> 
                     <li> <Sofa/> <span>Furnished & Decorated</span></li>
                     <li> <AirVentIcon/> <span> Air conditioning</span></li>
+                    <li><Refrigerator/> <span>Refrigerator</span></li>
                   </div>  
                 </ul>
               </div>
@@ -273,6 +300,7 @@ const Gallery = () => {
                   <div className={gallerystyle.offerRightSide}> 
                     <li> <Sofa/> <span>Furnished & Decorated</span></li>
                     <li> <AirVentIcon/> <span> Air conditioning</span></li>
+                    <li><Refrigerator/> <span>Refrigerator</span></li>
                   </div>  
                 </ul>
               </div>
@@ -289,20 +317,12 @@ const Gallery = () => {
 
           )}
 
-
-          
-         
-
         </div>
 
         <button className={gallerystyle.closeButton}>
           <CircleX stroke="#ad9551" size={50} onClick={handleCloseDialog} />
         </button>
-
-        
-
       </dialog>
-      
     </div>
   )
 }
