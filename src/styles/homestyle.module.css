@@ -67,19 +67,21 @@
 
 .bookingBttn{
     height: 100%;
-    width: 20%;
+    width: max-content;
     border-radius: 1rem;
     border: none;
     cursor: pointer;
     background-color: #ad9551;
     color: white;
     font-size: 1.5rem;
+    padding: .5rem 1rem;
+    transition: all 0.2s ease-in-out;
 }
 
 .bookingBttn:hover{
     background-color: #d9d9d9;  
     color: #ad9551;
-    transition: 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 .imageSliderImage{
@@ -122,7 +124,10 @@
     .bookingBttn{
         font-size: .9rem;
         height: 2.5rem;
-        width: 50%;
+        width: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
 
@@ -186,8 +191,11 @@
     }
 
     .bookingBttn{
-        font-size: 1rem;
+        font-size: .7rem;
         height: 100%;
+        width: 3rem;
+        display: flex;
+        justify-content: center;
     }
 
     .roomsPriceContainer{
@@ -860,9 +868,6 @@
 }
 
 
-.footerContainer{
-
-}
 
 @media(300px <= width <= 600px) {
     .faqContainer{
@@ -894,5 +899,7 @@
         font-size: 1rem;
         margin-top: 0;
     }
+
+   
 }
 

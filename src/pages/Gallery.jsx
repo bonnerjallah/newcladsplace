@@ -236,9 +236,16 @@ const Gallery = () => {
                   </div>  
                 </ul>
               </div>
-              <button className={gallerystyle.bookNowBttn}>
-                BookNow
-              </button>
+              <a
+                href="https://www.airbnb.com/rooms/1410439382816388187?adults=1&search_mode=regular_search&check_in=2025-05-10&check_out=2025-05-15&children=0&infants=0&pets=0"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className={gallerystyle.bookNowBttn}>
+                  Book Now
+                </button>
+              </a>
+
             </div>
           ) : (
             <div className={gallerystyle.roomDescription}>
@@ -269,10 +276,15 @@ const Gallery = () => {
                   </div>  
                 </ul>
               </div>
-              <button className={gallerystyle.bookNowBttn}>
-                BookNow
-              </button>
-              
+              <a
+                href="https://www.airbnb.com/rooms/1409967061590575086?adults=4&search_mode=regular_search&check_in=2025-05-14&check_out=2025-05-19&children=0&infants=0&pets=0"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className={gallerystyle.bookNowBttn}>
+                  Book Now
+                </button>
+              </a>
             </div>
 
           )}

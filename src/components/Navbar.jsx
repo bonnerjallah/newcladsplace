@@ -11,7 +11,7 @@ const Navbar = () => {
         <nav>
             <div className={navbarstyle.mainContainer}>
                 <div className={navbarstyle.logoContainer}>
-                    <NavLink>
+                    <NavLink to="/">
                         <img src="/cplogo.png" alt="clads place logo" />
                         <h1>Clad's Place</h1>
                     </NavLink>
@@ -23,13 +23,13 @@ const Navbar = () => {
                         <NavLink to="/">Home</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/About">About</NavLink>
-                    </li>
-                    <li>
                         <NavLink to="/Gallery">Gallery</NavLink>
                     </li>
                     <li>
                         <NavLink to="/ContactUs">Contact</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/About">About</NavLink>
                     </li>
                 </ul>
                 

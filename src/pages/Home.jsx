@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect } from 'react'
-
 import { Wifi, TvMinimal, Utensils, CookingPot, Sofa, AirVent, Hamburger, Beer, Refrigerator, Store, ChevronDown, ChevronUp, Plus, Minus   } from 'lucide-react';
 
 import { DateRange } from 'react-date-range';
@@ -106,7 +105,7 @@ const hasSelectedDates = state[0].startDate && state[0].endDate;
             ) : (
               <span>When ?</span>
             )}
-          </p>
+            </p>
 
             <DateRange
               editableDateInputs={true}
@@ -117,42 +116,51 @@ const hasSelectedDates = state[0].startDate && state[0].endDate;
             />
           </div>
            
-            <div style={{display: "flex", gap: "10px", alignItems: "center", cursor: "pointer"}}>
-              <Users />
-              <p style={{cursor: "pointer", display: "flex", gap: ".5rem", alignItems: "center"}}>
-                Guest  
-                <span
-                  onClick={() => setCounter(prev => (prev > 0 ? prev - 1 : 0))}
-                  style={{
-                    backgroundColor: "#ad9551",
-                    width: "2rem",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    borderRadius: ".5rem"
-                  }}
-                >
-                  -
-                </span>
-                {counter}
-                <span
-                  onClick={() => setCounter(prev => prev + 1)}
-                  style={{
-                    backgroundColor: "#ad9551",
-                    width: "2rem",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    borderRadius: ".5rem",
-                    marginRight: ".5rem"
-                  }}
-                >
-                  +
-                </span>
+          <div style={{display: "flex", gap: "10px", alignItems: "center", cursor: "pointer"}}>
+            <Users size={15} />
+            <p style={{cursor: "pointer", display: "flex", gap: ".5rem", alignItems: "center"}}>
+              Guest  
+              <span
+                onClick={() => setCounter(prev => (prev > 0 ? prev - 1 : 0))}
+                style={{
+                  backgroundColor: "#ad9551",
+                  width: "2rem",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  borderRadius: ".5rem"
+                }}
+              >
+                -
+              </span>
+              {counter}
+              <span
+                onClick={() => setCounter(prev => prev + 1)}
+                style={{
+                  backgroundColor: "#ad9551",
+                  width: "2rem",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  borderRadius: ".5rem",
+                  marginRight: ".5rem"
+                }}
+              >
+                +
+              </span>
 
-              </p>
-            </div>
-            <button className={homestyle.bookingBttn}>Book</button>
+            </p>
+          </div>
+            <a
+              href="https://www.airbnb.com/rooms/1410439382816388187?adults=1&search_mode=regular_search&check_in=2025-05-10&check_out=2025-05-15&children=0&infants=0&pets=0"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ textDecoration: "none" }}
+            >
+              <button className={homestyle.bookingBttn}>
+                Book Now
+              </button>
+            </a>
           </div>
           
         </div>
@@ -210,7 +218,7 @@ const hasSelectedDates = state[0].startDate && state[0].endDate;
       <div className={homestyle.offerContainer}>
         <div>
           <Wifi className={homestyle.icons}/>
-          <p>Free Wi-Fi</p>
+          <p>Wi-Fi</p>
         </div>
         <div>
           <TvMinimal className={homestyle.icons}/>
@@ -316,40 +324,40 @@ const hasSelectedDates = state[0].startDate && state[0].endDate;
 
       <div className={homestyle.galleryContainer}>
         <div className={`${homestyle.imageWrapper} ${homestyle.imageOne}`}>
-          <img src='./images/homeGalleryImage/pic1.jpg' alt='homeGalleryImage' />
+          <img src='./images/homeGalleryImage/pic1.jpg' alt='homeGalleryImage' loading='lazy' />
         </div>
         <div className={`${homestyle.imageWrapper} ${homestyle.imageTwo}`}>
-          <img src='./images/homeGalleryImage/pic2.jpg' alt='homeGalleryImage' />
+          <img src='./images/homeGalleryImage/pic2.jpg' alt='homeGalleryImage' loading='lazy' />
         </div>
         <div className={`${homestyle.imageWrapper} ${homestyle.imageThree}`}>
-          <img src='./images/homeGalleryImage/pic5.jpg' alt='homeGalleryImage' />
+          <img src='./images/homeGalleryImage/pic5.jpg' alt='homeGalleryImage' loading='lazy' />
         </div> 
         <div className={`${homestyle.imageWrapper} ${homestyle.imageFour}`}>
-          <img src='./images/homeGalleryImage/pic3.jpg' alt='homeGalleryImage'  />
+          <img src='./images/homeGalleryImage/pic3.jpg' alt='homeGalleryImage' loading='lazy'  />
         </div>
         <div className={`${homestyle.imageWrapper} ${homestyle.imageFive}`}>
-          <img src='./images/homeGalleryImage/pic4.jpg' alt='homeGalleryImage'  />
+          <img src='./images/homeGalleryImage/pic4.jpg' alt='homeGalleryImage' loading='lazy'  />
         </div>
         <div className={`${homestyle.imageWrapper} ${homestyle.imageSix}`}>
-          <img src='./images/homeGalleryImage/pic6.jpg' alt='homeGalleryImage' />
+          <img src='./images/homeGalleryImage/pic6.jpg' alt='homeGalleryImage' loading='lazy' />
         </div>
         <div className={`${homestyle.imageWrapper} ${homestyle.imageSeven}`}>
-          <img src='./images/homeGalleryImage/pic9.jpg' alt='homeGalleryImage'/>
+          <img src='./images/homeGalleryImage/pic9.jpg' alt='homeGalleryImage' loading='lazy'/>
         </div>
         <div className={`${homestyle.imageWrapper} ${homestyle.imageEight}`}>
-          <img src='./images/homeGalleryImage/pic7.jpg' alt='homeGalleryImage'  />
+          <img src='./images/homeGalleryImage/pic7.jpg' alt='homeGalleryImage' loading='lazy'  />
         </div>
         <div className={`${homestyle.imageWrapper} ${homestyle.imageNine}`}>
-          <img src='./images/homeGalleryImage/pic8.jpg' alt='homeGalleryImage'  />
+          <img src='./images/homeGalleryImage/pic8.jpg' alt='homeGalleryImage' loading='lazy'  />
         </div>
         <div className={`${homestyle.imageWrapper} ${homestyle.imageTen}`}>
-          <img src='./images/homeGalleryImage/pic10.jpg' alt='homeGalleryImage'  />
+          <img src='./images/homeGalleryImage/pic10.jpg' alt='homeGalleryImage' loading='lazy'  />
         </div>
         <div className={`${homestyle.imageWrapper} ${homestyle.imageEleven}`}>
-          <img src='./images/homeGalleryImage/pic11.jpg' alt='homeGalleryImage'  />
+          <img src='./images/homeGalleryImage/pic11.jpg' alt='homeGalleryImage' loading='lazy'  />
         </div>
         <div className={`${homestyle.imageWrapper} ${homestyle.imageTwelve}`}>
-          <img src='./images/homeGalleryImage/pic12.jpg' alt='homeGalleryImage'  />
+          <img src='./images/homeGalleryImage/pic12.jpg' alt='homeGalleryImage' loading='lazy'  />
         </div>
       </div>
 
