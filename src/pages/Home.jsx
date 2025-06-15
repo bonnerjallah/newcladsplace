@@ -29,7 +29,7 @@ const Images = [ayo1, ayo4, modu1, ayo3, modu2, ayo5, modu3]
 const Home = () => {
 
   const overviewRef = useRef(null)
-    const calendarRef = useRef(null);
+  const calendarRef = useRef(null);
 
 
   const [openCalendar, setOpenCalendar] = useState(false);
@@ -45,9 +45,8 @@ const hasSelectedDates = state[0].startDate && state[0].endDate;
 
   const [counter, setCounter] = useState(0)
   const [openOffers, setOpenOffers] = useState(false)
-  const [faqOneOpen, setFaqOneOpen] = useState(false)
-  const [faqTwoOpen, setFaqTwoOpen] = useState(false)
   const [faqDropDown, setFaqDropDown] = useState(false);
+  const [isAyo, setIsAyo] = useState(false)
 
 
 
@@ -78,90 +77,108 @@ const hasSelectedDates = state[0].startDate && state[0].endDate;
 
       <div className={homestyle.heroSection}>
         <div className={homestyle.imageSliderContainer}>
-          <ImageSlider imageUrls = {Images} />
+          <ImageSlider imageUrls={Images} />
         </div>
 
         <div className={homestyle.bookingContainer}>
           <div>
             <h1>Feel at home, free to roam</h1>
             <p>Experience your home away from home with our luxury apartments.</p>
-            <p>Find the peace of mind, flexibility, and confidence to start your latest adventure. Our top-notch skills ensure you get the best experience possible; it’s what we love to do.</p>
+            <p>Find the peace of mind, flexibility, and confidence to start your latest adventure...</p>
           </div>
 
-          <div className={homestyle.searchContainer}>
-            <div
-            ref={calendarRef}
-            style={{ display: "flex", gap: "5px", alignItems: "center", cursor: "pointer" }}
-          >
-            <CalendarDays />
-            <p onClick={() => setOpenCalendar(!openCalendar)}>
-            {hasSelectedDates ? (
-              <span>
-                {`${state[0].startDate.toLocaleDateString()} - ${state[0].endDate.toLocaleDateString()}`}
-              </span>
-            ) : (
-              <span>When ?</span>
-            )}
-            </p>
-
-            <DateRange
-              editableDateInputs={true}
-              onChange={item => setState([item.selection])}
-              moveRangeOnFirstSelection={false}
-              ranges={state}
-              className={openCalendar ? homestyle.dateRange : homestyle.dateRangeClose}
-            />
-          </div>
-           
-          <div style={{display: "flex", gap: "10px", alignItems: "center", cursor: "pointer"}}>
-            <Users size={15} />
-            <p style={{cursor: "pointer", display: "flex", gap: ".5rem", alignItems: "center"}}>
-              Guest  
-              <span
-                onClick={() => setCounter(prev => (prev > 0 ? prev - 1 : 0))}
-                style={{
-                  backgroundColor: "#ad9551",
-                  width: "2rem",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  borderRadius: ".5rem"
-                }}
+          <div className={homestyle.bookstayContainer}>
+            {/* Calendar + Date Display */}
+            <div className={homestyle.searchContainer}>
+              <div
+                ref={calendarRef}
+                onClick={() => setOpenCalendar(!openCalendar)}
+                style={{ display: "flex", gap: "5px", alignItems: "center", cursor: "pointer", marginRight: ".5rem" }}
               >
-                -
-              </span>
-              {counter}
-              <span
-                onClick={() => setCounter(prev => prev + 1)}
-                style={{
-                  backgroundColor: "#ad9551",
-                  width: "2rem",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  borderRadius: ".5rem",
-                  marginRight: ".5rem"
-                }}
-              >
-                +
-              </span>
+                <CalendarDays />
+                <p>
+                  {hasSelectedDates ? (
+                    <span>
+                      {`${state[0].startDate.toLocaleDateString()} - ${state[0].endDate.toLocaleDateString()}`}
+                    </span>
+                  ) : (
+                    <span>When ?</span>
+                  )}
+                </p>
+              </div>
 
-            </p>
+              {openCalendar && (
+                <DateRange
+                  editableDateInputs={true}
+                  onChange={item => setState([item.selection])}
+                  moveRangeOnFirstSelection={false}
+                  ranges={state}
+                  className={homestyle.dateRange}
+                />
+              )}
+            </div>
+
+            {/* Booking options */}
+            <div className={homestyle.bookingOptionsContainer}>
+              <div style={{ cursor: "pointer", display: "flex", flexDirection: "column", gap: ".5rem", alignItems: "center" }}>
+                <div  className={homestyle.amountOptionContainer}>
+                  <Users size={15} />
+                  Guest
+                  <span onClick={() => setCounter(prev => Math.max(prev - 1, 0))} className={homestyle.amountOption} >
+                    <Minus size={15} />
+                  </span>
+                  {counter}
+                  <span onClick={() => setCounter(prev => prev + 1)}  className={homestyle.amountOption} >
+                    <Plus size={15} />
+                  </span>
+                </div>
+
+                <span className={homestyle.optionsContainer}>
+                  <label htmlFor="theAyo">
+                    The Ayo
+                    <input
+                      type="checkbox"
+                      id="theAyo"
+                      checked={isAyo}
+                      onChange={() => setIsAyo(true)}
+                    />
+                  </label>
+                  <label htmlFor="theModu">
+                    The Modu
+                    <input
+                      type="checkbox"
+                      id="theModu"
+                      checked={!isAyo}
+                      onChange={() => setIsAyo(false)}
+                    />
+                  </label>
+                </span>
+              </div>
+            </div>
+
+            {/* Booking button */}
+            <div>
+              <a
+                href={
+                  isAyo
+                    ? "https://www.airbnb.com/rooms/1410439382816388187?adults=1&search_mode=regular_search&check_in=2025-05-10&check_out=2025-05-15&children=0&infants=0&pets=0&source_impression_id=p3_1746874455_P3uI5StpLzFkRrp8&previous_page_section_name=1000&federated_search_id=dcff1440-c3f5-4b67-9f07-0b485fbed3a2"
+                    : "https://www.airbnb.com/rooms/1409967061590575086?adults=4&search_mode=regular_search&check_in=2025-05-14&check_out=2025-05-19&children=0&infants=0&pets=0&source_impression_id=p3_1746974374_P3l6sHYsTI1cDaz_&previous_page_section_name=1000&federated_search_id=b91d48f4-b5d3-47bc-930f-ab703f8f6fd7"
+                }
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: "none" }}
+              >
+                <button className={homestyle.bookingBttn}>Book Now</button>
+              </a>
+             </div>
           </div>
-            <a
-              href="https://www.airbnb.com/rooms/1410439382816388187?adults=1&search_mode=regular_search&check_in=2025-05-10&check_out=2025-05-15&children=0&infants=0&pets=0"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ textDecoration: "none" }}
-            >
-              <button className={homestyle.bookingBttn}>
-                Book Now
-              </button>
-            </a>
-          </div>
+
+          
+
           
         </div>
       </div>
+
 
       <div className={homestyle.addressContainer}>
         <div className={homestyle.addressWrapper}>
@@ -179,14 +196,14 @@ const hasSelectedDates = state[0].startDate && state[0].endDate;
         </div>
 
         <div className={homestyle.overviewDropdown}>
-          <h2 onClick={() => setFaqDropDown(!faqDropDown)}>
-            OverView <span><ChevronDown size={20} /></span>
+          <h2 onClick={() => {overviewRef.current?.scrollIntoView({
+             behavior: 'smooth',
+            })}}>
+            OverView 
           </h2>
           <div className={faqDropDown ? homestyle.overDropOpen : homestyle.overDropClose}>
             <ul>
-              <li onClick={() => {overviewRef.current?.scrollIntoView({
-                behavior: 'smooth',
-              })}}>Overview</li>
+              <li >Overview</li>
               <li onClick={() => {faqRef.current?.scrollIntoView({
                 behavior: 'smooth',
               })}}>FAQs</li>
@@ -249,7 +266,7 @@ const hasSelectedDates = state[0].startDate && state[0].endDate;
         <div className={homestyle.closeOfferContainerHeadderWrapper}>
           <div>
             <Wifi className={homestyle.icons}/>
-            <p>Free Wi-Fi</p>
+            <p>Wi-Fi</p>
           </div>
 
           <div>
@@ -361,22 +378,14 @@ const hasSelectedDates = state[0].startDate && state[0].endDate;
         </div>
         <div className={homestyle.overViewSectionBody}>
           <p>
-            Welcome to Clad's Place, a modern and stylish two-apartment located in the heart of Monrovia, Liberia. Whether you're visiting for business or leisure, we offer fully furnished units with spacious layouts, high-end finishes, and all the comforts of home. Our apartments are designed with both functionality and relaxation in mind, ensuring a pleasant stay for all our guests.
+            Spacious rooms, a full kitchen, fast Wi-Fi, and 24/7 security—everything you need for a comfortable stay.
           </p>
           <p>
-            Each apartment boasts <strong>two well-sized bedrooms</strong>, perfect for resting after a long day. The <strong>kitchen</strong> is fully equipped with modern appliances and everything you need to prepare meals. Our <strong>bathroom</strong> is clean, spacious, and designed with contemporary fixtures. The <strong>living space</strong> offers a cozy yet open environment, ideal for relaxing, watching TV, or hosting guests.
+            Family-run and hospitality-driven, we’re here to help you feel at home and make the most of Monrovia.
+            Just minutes from the beach, dining, and shopping— our apartments are perfect for business or a quick getaway.
           </p>
           <p>
-            Additionally, each unit comes with complimentary high-speed Wi-Fi, ensuring you stay connected throughout your stay. For your peace of mind, we provide 24-hour security and well-maintained facilities. Whether you’re staying for a few days or several weeks, you’ll feel right at home with all the amenities at your fingertips.
-          </p>
-          <p>
-            As a family-owned business with experience in hospitality, we are committed to offering exceptional service and creating a welcoming atmosphere. Our friendly staff is always available to assist you with anything you need, from arranging transportation to recommending the best local restaurants, attractions, or shopping spots. We want you to experience the true essence of Monrovia and ensure your stay is as comfortable and enjoyable as possible.
-          </p>
-          <p>
-            Our prime location means that you're never far from the best Monrovia has to offer. Clad's Place is just minutes away from the beach, shopping centers, and fine dining options, so you can easily explore the city’s vibrant culture. Whether you’re here for business meetings or just to enjoy some downtime, we offer the perfect setting for a productive and relaxing stay.
-          </p>
-          <p>
-            We look forward to hosting you at Clad's Place, where comfort, convenience, and hospitality come together. Whether you're here for a short-term stay or an extended visit, we guarantee you'll have a memorable experience.
+            We can’t wait to host you in the Modu or Ayo apartment.
           </p>
         </div>
       </div>

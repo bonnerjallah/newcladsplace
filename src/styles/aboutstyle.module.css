@@ -32,6 +32,7 @@
     background-color: #fffcf2;
     transform: translate(100%, 100%);
     z-index: 2;
+    border: #ad9551 1px solid;
 }
 
 .headerContainer::after{
@@ -45,17 +46,16 @@
     transform: translate(-7%, 100%);
     z-index: 99;
 }
-    
 
 
 .welcome{
     position: absolute;
-    top: 50%; /* initial off-screen position */
+    top: 80%; 
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    font-size: clamp(1.2rem, 5vw, 2.5rem);
+    font-size: clamp(1rem, 5vw, 2.5rem);
     animation: headerSlideIn 1s ease-in-out 0.3s 1 normal forwards;
     z-index: 111;
     color: #ad9551;

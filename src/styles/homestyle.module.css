@@ -20,6 +20,16 @@
     height: 87vh;
 }
 
+.amountOption{
+    background-color:#ad9551;
+    width: 1.5rem;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+}
+
 .bookingContainer h1{
     font-size: clamp(1.5rem, 2vw, 3rem);
     color: #ad9551;
@@ -44,6 +54,12 @@
     position: absolute;
 }
 
+.bookstayContainer{
+    display: flex;
+    align-items: center;
+    column-gap: .5rem;
+}
+
 
 .imageSliderContainer img{
     width: 100%;
@@ -51,14 +67,21 @@
     border-radius: 0 0 0 5rem;
 }
 
+.bookingOptionsContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+}
+
 .searchContainer{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: .4rem;
-    border-radius: 1rem;
     margin-top: -1rem;
     margin-top: 1rem;
+    width: max-content;
 }
 
 .searchContainer div p{
@@ -73,9 +96,10 @@
     cursor: pointer;
     background-color: #ad9551;
     color: white;
-    font-size: 1.5rem;
+    font-size: 1rem;
     padding: .5rem 1rem;
     transition: all 0.2s ease-in-out;
+    margin-right: .5rem;
 }
 
 .bookingBttn:hover{
@@ -90,6 +114,11 @@
     flex-shrink: 0;
     flex-grow: 0;
     transition: translate 1s ease-in-out;
+}
+
+input[type="checkbox"]{
+    outline: none;
+    accent-color: #ad9551;
 }
 
 @media(600px <= width <= 1030px){
@@ -126,11 +155,24 @@
         margin-left: 0;
     }
 
+    .bookstayContainer{
+        position: relative;
+        bottom: -10rem;
+        width: 22rem;
+        margin-left: -3.5rem;
+        display: flex;
+        align-items: center;
+        border: #ad9551 1px solid;
+        border-radius: 1rem;
+        background-color: #fffcf2;
+
+    }
+
     .bookingContainer{
         left: 14%;
         border-radius: 0 0 5rem 1rem;
         width: 55%;
-        height: max-content;
+        height: 11.5rem;
         background-color: #fffcf2;
         position: relative;
     }
@@ -149,8 +191,19 @@
         font-size: .7rem;
     }
 
+    .bookingOptionsContainer{
+        display: flex;
+        width: 50%;
+        font-size: 1rem;
+        margin-left: -.5rem;
+    }
+
+    .optionsContainer{
+        font-size: .7rem;
+    }
+
+
     .searchContainer{
-        border: 2px solid #ad9551;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -159,11 +212,7 @@
         padding: .4rem;
         border-radius: 1rem;
         font-size: .7rem;
-        margin-top: -3rem;
-        margin-left: -4rem;
-        position: absolute;
         top: 24rem;
-        background-color: #fffcf2;
 
     }
 
@@ -179,6 +228,15 @@
         justify-content: center;
     }
 
+}
+
+.amountOptionContainer{
+    display: flex;
+    column-gap: .5rem;
+}
+
+label input{
+    cursor: pointer;
 }
 
 .welcomeContainer{
@@ -263,11 +321,28 @@
     display: none;
 }
 
+.optionsContainer{
+    display: flex;
+    column-gap: .5rem;
+}
+
+.optionsContainer label{
+    font-size: 1 rem;
+    display: flex;
+    justify-content: center;
+    column-gap: .5rem;
+}
+
+
 .overviewDropdown h2{
     display: flex;
     column-gap: .5rem;
     font-size: 1rem;
     color: #ad9551;
+}
+
+.overViewSectionHeader h2{
+    font-size: clamp(1rem 5vw 2rem);
 }
 
 .overDropClose {
@@ -415,6 +490,11 @@
     .welcomeContainer p{
         font-size: 1rem;
         width: 100%;
+    }
+    
+    .overViewSectionHeader h2{
+        font-size: 1.2rem;
+        margin-bottom: .5rem;
     }
 }
 
