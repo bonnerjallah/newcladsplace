@@ -3,6 +3,8 @@ import aboutstyles from '../styles/aboutstyle.module.css'
 import Footer from '../components/Footer'
 import ScrollToTop from '../components/ScrollToTop'
 
+import davies from "/davies.png"
+
 const About = () => {
 
 
@@ -29,8 +31,10 @@ const About = () => {
 
           <p className={aboutstyles.capitalizedParagraph}>
             C.<span>L.</span> and his wife, Catherine, raised their five children here (Claudia, Thomas, Catherine, Reginal, and Claudius) filling the space with traditions, and a deep sense of
-            belonging. In 1976, the property shifted gears, becoming home to Eagle Electric, a successful local business that energized the space with new purpose.
+            belonging. <img src={davies} alt="family tree photo" className={aboutstyles.aboutImage} />
+            In 1976, the property shifted gears, becoming home to Eagle Electric, a successful local business that energized the space with new purpose.
           </p>
+
 
           <p className={aboutstyles.capitalizedParagraph}>
             Today, the legacy continues. Now maintained by C.L.’s descendants, who see CLAD’s Place not just as real estate, but as a living legacy. The property features two
