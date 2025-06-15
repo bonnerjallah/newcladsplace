@@ -1,19 +1,20 @@
 .formWrapper{
     background-color: #ad9551;
     width: 40%;
-    height: 35rem;
+    height: max-content;
     margin: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 10%;
+    border-radius: 5%;
     margin-top: 5rem;
 }
 
 form{
     display: flex;
     flex-direction: column;
-    row-gap: 2rem;
+    row-gap: 1rem;
+    padding: .5rem;
 }
 
 form button{
@@ -39,7 +40,7 @@ h2{
     margin-top: .5rem;
 }
 form input{
-    margin: 2rem .5rem;
+    margin: 1rem .5rem;
     width: 20rem;
     height: 2rem;
     padding: .5rem;
@@ -52,12 +53,13 @@ textarea{
 fieldset{
     display: flex;
     flex-direction: column;
+    padding: .5rem;
+    border-radius: .5rem;
 }
 
 .checkboxWrapper{
     display: flex;
     justify-content: space-around;
-    margin-top: -3rem;
 }
 
 .checkboxWrapper label{
@@ -70,8 +72,8 @@ fieldset{
      
 }
 
-@media (300px <= width <= 600px) {
-        .formWrapper{
+@media(300px <= width <= 600px) {
+    .formWrapper{
         background-color: #ad9551;
         width: 100%;
         height: max-content;
@@ -79,7 +81,6 @@ fieldset{
         display: flex;
         flex-direction: column;
         align-items: center;
-        border-radius: 10%;
         margin-top: 3rem;
         padding: 1rem;
     }

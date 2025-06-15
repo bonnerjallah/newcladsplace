@@ -5,7 +5,8 @@ import { Wifi, TvMinimal, Utensils, CookingPot, Sofa, Refrigerator, CircleX, Squ
 
 import GalleryImageSlider from "../components/GalleryImageSlider"
 
-import tourVid from "/tourvid.mp4"
+import moduvid from "/moduvid.mp4"
+import ayovid from "/ayovid.mp4"
 
 import ayobedroomOne from "/images/galleryImages/AyoImages/ayoBedRoomOne.jpg"
 import ayobedroomtwo from "/images/galleryImages/AyoImages/ayoBedRoomTwo.jpg"
@@ -114,6 +115,7 @@ const Gallery = () => {
 
   const dialogRef = useRef(null);
   const videoDialogRef = useRef(null);
+  const ayoVideoRef = useRef(null);
   const [activeImage, setActiveImage] = useState(null);
   const [ayoActive , setAyoActive] = useState(false);
   const [moduActive , setModuActive] = useState(false);
@@ -148,6 +150,10 @@ const Gallery = () => {
 
   }
 
+  const handleShowAyoVid =(event) => {
+    dialogRef.current.showModal()
+  }
+
   const handleCloseDialog = () => {
     setActiveImage(null);
     dialogRef.current.close();
@@ -157,8 +163,9 @@ const Gallery = () => {
   }
 
   const handleCloseVideoDialog = () => {
-    console.log("video dialog closed");
     videoDialogRef.current.close();
+    ayoVideoRef.current.close()
+
     
   }
 
@@ -184,19 +191,27 @@ const Gallery = () => {
     });
   }
 
+
+
     
 
   return (
     <div className={gallerystyle.mainContainer}>
       <div className={gallerystyle.roomDisContainer}>
         <h2 onClick={handleAyoHeaderClick}>The Ayo</h2>
+
+        <div className={gallerystyle.videoContainer} onClick={() => ayoVideoRef.current.showModal()}>
+          <SquarePlay />
+        </div>
+
         <h2 onClick={handleModuHeaderClick}>The Modu</h2>
 
         <div className={gallerystyle.videoContainer} onClick={() => videoDialogRef.current.showModal()}>
-
           <SquarePlay />
-
         </div>
+
+
+
         <dialog ref={videoDialogRef} className={gallerystyle.videoDialog}>
           <CircleX stroke="red" size={50} onClick={handleCloseVideoDialog} style={{position: "absolute", zIndex:"22", cursor:"pointer"}} />
           <video
@@ -205,7 +220,21 @@ const Gallery = () => {
             poster="/images/yourThumbnail.jpg" 
             className={gallerystyle.videoPlayer}
           >
-          <source src={tourVid} type="video/mp4" />
+          <source src={moduvid} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </dialog>  
+
+        
+         <dialog ref={ayoVideoRef} className={gallerystyle.videoDialog}>
+          <CircleX stroke="red" size={50} onClick={handleCloseVideoDialog} style={{position: "absolute", zIndex:"22", cursor:"pointer"}} />
+          <video
+            controls
+            muted
+            poster="/images/yourThumbnail.jpg" 
+            className={gallerystyle.videoPlayer}
+          >
+          <source src={ayovid} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </dialog>        

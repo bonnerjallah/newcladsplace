@@ -39,6 +39,10 @@ const ContactUs = () => {
                             <input type="email" name="user_email" id="email" placeholder="@email.com*" required />
                         </label>
 
+                        <label htmlFor="phone">Phone:
+                            <input type="number" name="phone_number" id="phone" placeholder="000-000-0000" required />
+                        </label>
+
                         <div className={constactstyle.checkboxWrapper}>
                             <label htmlFor="prospective">Prospective Guest:
                                 <input type="checkbox" name="prospectiveGuest" id="prospective" />

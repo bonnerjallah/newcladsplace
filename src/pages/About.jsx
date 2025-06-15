@@ -15,20 +15,35 @@ const About = () => {
       <div className={aboutstyles.MainContainer}>
         <div className={aboutstyles.headerContainer}>
           <div className={aboutstyles.header}>
-              <h1>About</h1>
+            <h1 className={aboutstyles.welcome}>Welcome to CLAD’s Place -</h1>
+            <h2 className={aboutstyles.century}> A Century-Old Family Legacy, Yours to Experience</h2>
           </div>
         </div>
         <div className={aboutstyles.aboutSubContainer}>
+
           <p className={aboutstyles.capitalizedParagraph}>
-            For over a century, the CLAD Homestead has remained within the Davies family, passing through five successive generations. Originally acquired by Thomas and Elizabeth Davies upon their settlement in Liberia. Thomas, a contractor, built a two-story framed house where he and his wife lived until his death. Upon Thomas's passing, Elizabeth bequeathed the estate to their sole biological son, affectionately known as C.L. Abiose Davies.
+            For over a hundred years, this property has been part of the Davies family story, passed down through five generations. It all began when Thomas and Elizabeth Davies
+            settled in Liberia and laid down roots that would grow deep and wide. They passed the property to their only son, C.L. Abiose Davies, a man whose love for community
+            still echoes.
           </p>
 
           <p className={aboutstyles.capitalizedParagraph}>
-            This property is where C.L. Abiose Davies and his wife, Catherine O. Davies, raised their five children: Claudia, Thomas, Catherine, Reginal, and Claudius. Subsequently,<img src='/daviestreepng.png' alt='' className={aboutstyles.aboutImage} /> in 1976, the land was leased to the Eid family (Eagle Electric), who established and grew a thriving building supply business within the city.
+            C.<span>L.</span> and his wife, Catherine, raised their five children here (Claudia, Thomas, Catherine, Reginal, and Claudius) filling the space with traditions, and a deep sense of
+            belonging. In 1976, the property shifted gears, becoming home to Eagle Electric, a successful local business that energized the space with new purpose.
           </p>
 
           <p className={aboutstyles.capitalizedParagraph}>
-            Upon C.L. Abiose Davies' demise, he passed the property on to his five surviving children, with the stipulation that the estate remain within the family lineage. As the family expanded and the potential heirs (including great-grandchildren) increased, C.L. Abiose Davies' heirs collectively decided to designate their successors and transfer ownership while they were alive, preempting any future confusion.
+            Today, the legacy continues. Now maintained by C.L.’s descendants, who see CLAD’s Place not just as real estate, but as a living legacy. The property features two
+            private apartments, each crafted with care to reflect the warmth, history, and spirit that’s been passed down through the years.
+          </p>
+
+          <p className={aboutstyles.capitalizedParagraph}>
+            CLAD’s Place isn’t just somewhere to stay. It’s a story, and now, for a little while, you’re part of it. Whether you&#39;re here to rest, explore, or reconnect, we hope you feel
+            right at home.
+          </p>
+
+          <p className={aboutstyles.capitalizedParagraph}>
+            Welcome to something special. Welcome to the family — even if just for a little while
           </p>
         </div>
         

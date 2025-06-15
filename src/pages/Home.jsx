@@ -29,8 +29,7 @@ const Images = [ayo1, ayo4, modu1, ayo3, modu2, ayo5, modu3]
 const Home = () => {
 
   const overviewRef = useRef(null)
-  const faqRef = useRef(null)
-  const calendarRef = useRef(null);
+    const calendarRef = useRef(null);
 
 
   const [openCalendar, setOpenCalendar] = useState(false);
@@ -84,17 +83,15 @@ const hasSelectedDates = state[0].startDate && state[0].endDate;
 
         <div className={homestyle.bookingContainer}>
           <div>
-            <h1>Feel at home,
-              <br />
-              free to roam
-            </h1>
-            <p>Experience your home away form home for a month, a year, or longer with a morden design, furnished apartments.</p>
+            <h1>Feel at home, free to roam</h1>
+            <p>Experience your home away from home with our luxury apartments.</p>
+            <p>Find the peace of mind, flexibility, and confidence to start your latest adventure. Our top-notch skills ensure you get the best experience possible; it’s what we love to do.</p>
           </div>
 
           <div className={homestyle.searchContainer}>
             <div
             ref={calendarRef}
-            style={{ display: "flex", gap: "10px", alignItems: "center", cursor: "pointer" }}
+            style={{ display: "flex", gap: "5px", alignItems: "center", cursor: "pointer" }}
           >
             <CalendarDays />
             <p onClick={() => setOpenCalendar(!openCalendar)}>
@@ -178,12 +175,6 @@ const hasSelectedDates = state[0].startDate && state[0].endDate;
               behavior: 'smooth',
               })}}>Overview
             </li>
-
-            <li onClick={() => {faqRef.current?.scrollIntoView({
-              behavior: 'smooth',
-              })}}>
-              FAQs
-            </li>
           </ul>
         </div>
 
@@ -208,11 +199,6 @@ const hasSelectedDates = state[0].startDate && state[0].endDate;
       <div className={homestyle.welcomeContainer} >
           <p>Find the peace of mind, flexibility, and confidence to start your latest adventure — a new work gig, a home in between leases, or travel fever — No matter how you identify, our top-notch skills ensure you get the best experience possible. It’s what we love to do.
           </p>
-      </div>
-
-      <div className={homestyle.roomsPriceContainer}>
-        <p>From</p>
-        <p>$130/night</p>
       </div>
 
       <div className={homestyle.offerContainer}>
@@ -369,7 +355,7 @@ const hasSelectedDates = state[0].startDate && state[0].endDate;
 
       <div className={homestyle.overViewSection} id="overview" ref={overviewRef}>
         <div className={homestyle.overViewSectionHeader}>
-          <h2>Space & Setting</h2>
+          <h2>“Welcome to CLAD’s Place</h2>
           <hr />
           <p><strong>*Brand new*</strong></p>
         </div>
@@ -395,58 +381,7 @@ const hasSelectedDates = state[0].startDate && state[0].endDate;
         </div>
       </div>
 
-      <div className={homestyle.faqContainer} id="location" ref={faqRef}>
 
-        <h2>FAQs.</h2>
-        <div className={homestyle.faqBodyContainer}>
-          <div className={homestyle.questionsContainer}>
-            <div>
-              <p onClick={() => setFaqOneOpen(prev => !prev)}>What time is check in/out {
-                faqOneOpen ? <Minus /> : <Plus />
-                } 
-              </p>
-              <p className={faqOneOpen ? homestyle.faqOpen : homestyle.faqClose}>
-                Check-in is at 3:00 PM and check-out is at 11:00 AM. If you need to adjust these times, please let us know in advance.
-              </p>
-            </div>
-            <div>
-              <p onClick={() => setFaqTwoOpen(prev => !prev)}>Is pets allow {
-                faqTwoOpen ? <Minus/> : <Plus />
-                }
-              </p>
-              <p className={faqTwoOpen ? homestyle.faqOpenTwo : homestyle.faqCloseTwo}>We love pets, but we currently do not allow them in our apartments. We apologize for any inconvenience this may cause.</p>
-            </div>
-          </div>
-          
-          <div>
-            <p>Still have questions?</p>
-            <NavLink to="/ContactUs">
-              <button className={homestyle.sendMsgBttn}>Send us a message</button>
-            </NavLink>
-          </div>
-
-          <div>
-            <h2>Why book with us?</h2>
-            <div className={homestyle.whyBookWithUsContainer}>
-              <div>
-                <h3>Exceptional Service</h3>
-                <p>Our friendly team is always available to help with transportation, local recommendations, or anything else you need.</p>
-              </div>
-              <div>
-                <h3>Ideal for Business or Leisure</h3>
-                <p>Whether you're in town for work or vacation, our peaceful and private apartments provide the perfect balance of productivity and relaxation. From weekend getaways to extended stays, we offer options to suit your needs.</p>
-              </div>
-              <div>
-                <h3>Quiet & Safe Environment</h3>
-                <p>Clad's Place offers security, gated access, and surveillance—ensuring a safe, relaxing, and worry-free stay for all guests.</p>
-              </div>
-              
-            </div>
-          </div>
-
-        </div>
-
-      </div>
 
       <div className={homestyle.footerContainer}>
          <Footer />   
