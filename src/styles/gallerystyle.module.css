@@ -19,6 +19,7 @@
     align-items: flex-end;
     padding: 3rem 3rem;
     row-gap: 1rem;
+    position: relative;
 }
 
 .roomDisContainer h2{
@@ -100,6 +101,7 @@
     grid-template-columns: 70% 30%;
     height: 100%;
     width: 100%;
+    color: #ad9551;
 }
 
 .dialogImage{
@@ -228,11 +230,14 @@
     font-size: clamp(0.8rem, 1vw, 1.5rem);
     line-height: 1.5;
     margin-bottom: 1rem;
+    color: white;
 }
 
 .roomDetails ul li{
     list-style: circle;
     color: white;
+    list-style: none;
+
 }
 
 .roomFeatures{
@@ -258,6 +263,16 @@
     font-size: clamp(0.8rem, 1vw, 1.5rem);
 }
 
+.roomDescription{
+    position: relative;
+    padding-left: 1rem;
+}
+
+.roomDescription h1{
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+}
+
 .offerLeftSide li{
     display: flex;
     align-items: center;
@@ -265,13 +280,14 @@
     margin-bottom: 0.5rem;
 }
 
-details{
+.roomDescription details{
     cursor: pointer; 
+    font-size: 1.2rem;
 }
 
-.bookNowBttn{
+a .bookNowBttn{
     position: absolute;
-    width: 10%;
+    width: 20%;
     height: 3rem;
     background-color: #ad9551;
     border: none;
@@ -279,8 +295,8 @@ details{
     font-size: clamp(0.8rem, 1vw, 1.5rem);
     border-radius: 0.5rem;
     cursor: pointer;
-    bottom: 15rem;
-    right: 10%;
+    top: .2rem;
+    right: 1%;
     display: flex;
     justify-content: center;
     align-items: center;

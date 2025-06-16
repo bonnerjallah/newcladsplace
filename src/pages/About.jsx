@@ -16,11 +16,13 @@ const About = () => {
 
       <div className={aboutstyles.MainContainer}>
         <div className={aboutstyles.headerContainer}>
-          <div className={aboutstyles.header}>
-            <h1 className={aboutstyles.welcome}>A Century-Old Family Legacy, Yours to Experience</h1>
-            <h2 className={aboutstyles.century}>Welcome to CLAD’s Place -</h2>
-          </div>
         </div>
+
+        <div className={aboutstyles.header}>
+          <h1 className={aboutstyles.welcome}>Welcome to CLAD’s Place -</h1>
+          <h2 className={aboutstyles.century}>A Century-Old Family Legacy, Yours to Experience</h2>
+        </div>
+
         <div className={aboutstyles.aboutSubContainer}>
 
           <p className={aboutstyles.capitalizedParagraph}>

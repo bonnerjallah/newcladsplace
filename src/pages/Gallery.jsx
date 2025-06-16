@@ -303,7 +303,7 @@ const Gallery = () => {
               </a>
 
             </div>
-          ) : (
+            ) : (
             <div className={gallerystyle.roomDescription}>
               <h1>The Modu</h1>
               <details className={gallerystyle.roomDetails}>

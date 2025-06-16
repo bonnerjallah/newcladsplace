@@ -31,8 +31,7 @@
     height: 55%;
     background-color: #fffcf2;
     transform: translate(100%, 100%);
-    z-index: 2;
-    border: #ad9551 1px solid;
+    z-index: 50;
 }
 
 .headerContainer::after{
@@ -44,18 +43,27 @@
     height: 55%;
     background-color: #fffcf2;
     transform: translate(-7%, 100%);
-    z-index: 99;
+    z-index: 50;
+}
+
+.header{
+    width: 100%;
+    height: 10rem;
+    position: relative;
+    margin-top: -15rem;
+    margin-bottom: 9rem;
+    display: flex;
+    flex-direction: column;
 }
 
 
 .welcome{
     position: absolute;
-    top: 80%; 
+    top: 25%;
     display: flex;
     justify-content: center;
-    align-items: center;
     width: 100%;
-    font-size: clamp(1rem, 5vw, 2.5rem);
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
     animation: headerSlideIn 1s ease-in-out 0.3s 1 normal forwards;
     z-index: 111;
     color: #ad9551;
@@ -63,24 +71,24 @@
 
 @keyframes headerSlideIn {
     0% {
-        bottom: -10%;
+        top: -100%;
         opacity: 0;
     }
     100% {
-        bottom: 0rem; 
+        top: 20%;
         opacity: 1;
     }
 }
 
 .century{
     position: absolute;
-    bottom: -100%; 
+    top: -10%; 
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     font-size: clamp(1rem, 5vw, 2.5rem);
-    animation: headerSlideInTwo 1.7s ease-in-out forwards;
+    animation: headerSlideInTwo 1.3s ease-in-out forwards;
     z-index: 111;
     color: #ad9551;
     margin-top: .5rem;
@@ -107,9 +115,8 @@
     background-color: #ede0d4;
     padding: 2rem;
     border-radius: 1rem;
-    margin-top: -2rem;
+    margin-top: 2rem;
     margin-bottom: 5rem;
-
 }
 
 .capitalizedParagraph {
@@ -139,13 +146,36 @@
         line-height: 2rem;
     };
 
+    .header{
+        width: 100%;
+        height: 10rem;
+        position: relative;
+        margin-top: -5rem;
+        margin-bottom: 9rem;
+        display: flex;
+        flex-direction: column;
+    }
+
     .welcome{
         font-size: 1rem;
-        border: #ad9551 1px solid ;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        animation: headerSlideIn 1s ease-in-out 0.3s 1 normal forwards;
+        z-index: 1;
+        color: #ad9551;
     };
 
     .century{
-        border: #ad9551 2px solid;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        font-size: 1rem;
+        animation: headerSlideInTwo 1.7s ease-in-out forwards;
+        z-index: 1;
+        color: #ad9551;
     }
 
     .aboutImage {
@@ -153,6 +183,57 @@
         margin: 0 0 1rem 1rem;
         width: 80px; 
         max-width: 100px;
+    }
+
+
+
+    .headerContainer::before{
+        content: "";
+        display: block;
+        position: absolute;
+        border-radius: 100% 60%;
+        width: 55%;
+        height: 55%;
+        background-color: #fffcf2;
+        transform: translate(100%, 100%);
+        z-index: 50;
+    }
+
+    .headerContainer::after{
+        content: "";
+        display: block;
+        position: absolute;
+        border-radius: 100% 60%;
+        width: 80%;
+        height: 55%;
+        background-color: #fffcf2;
+        transform: translate(-7%, 100%);
+        z-index: 50;
+    }
+
+    .headerContainer{
+        background-image: url("../images/modu2.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 70dvh;
+        width: 100%;
+        opacity: .5;
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 3rem;
+    }
+
+    .aboutSubContainer{
+        width: 80%;
+        flex-direction: column;
+        align-self: center;
+        font-size: clamp(.9rem, 1.7vw, 2.5rem);
+        background-color: #ede0d4;
+        padding: 2rem;
+        border-radius: 1rem;
+        margin-top: -7rem;
+        margin-bottom: 5rem;
     }
         
 

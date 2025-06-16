@@ -214,7 +214,7 @@ const hasSelectedDates = state[0].startDate && state[0].endDate;
       </div>
 
       <div className={homestyle.welcomeContainer} >
-          <p>Find the peace of mind, flexibility, and confidence to start your latest adventure — a new work gig, a home in between leases, or travel fever — No matter how you identify, our top-notch skills ensure you get the best experience possible. It’s what we love to do.
+          <p>Weather you're visiting family, traveling for business, or living the degital nomad life, we will make it easy for you to feel at home. With thoughtful service and flexible stays, you can focus on what matters most.
           </p>
       </div>
 
@@ -374,7 +374,6 @@ const hasSelectedDates = state[0].startDate && state[0].endDate;
         <div className={homestyle.overViewSectionHeader}>
           <h2>“Welcome to CLAD’s Place</h2>
           <hr />
-          <p><strong>*Brand new*</strong></p>
         </div>
         <div className={homestyle.overViewSectionBody}>
           <p>
