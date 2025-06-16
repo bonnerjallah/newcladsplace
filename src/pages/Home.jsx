@@ -372,7 +372,7 @@ const hasSelectedDates = state[0].startDate && state[0].endDate;
 
       <div className={homestyle.overViewSection} id="overview" ref={overviewRef}>
         <div className={homestyle.overViewSectionHeader}>
-          <h2>“Welcome to CLAD’s Place</h2>
+          <h2>Welcome to CLAD’s Place</h2>
           <hr />
         </div>
         <div className={homestyle.overViewSectionBody}>
