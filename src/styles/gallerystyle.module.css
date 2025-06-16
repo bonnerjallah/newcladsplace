@@ -295,7 +295,7 @@ a .bookNowBttn{
     font-size: clamp(0.8rem, 1vw, 1.5rem);
     border-radius: 0.5rem;
     cursor: pointer;
-    top: .2rem;
+    top: 20rem;
     right: 1%;
     display: flex;
     justify-content: center;
@@ -475,6 +475,26 @@ a .bookNowBttn{
         height: 50%;
         border-radius: 1rem;
         object-fit: cover;
+    }
+
+    a .bookNowBttn{
+        position: absolute;
+        width: 20%;
+        height: 3rem;
+        background-color: #ad9551;
+        border: none;
+        color: black;
+        font-size: clamp(0.8rem, 1vw, 1.5rem);
+        border-radius: 0.5rem;
+        cursor: pointer;
+        top: .2rem;
+        right: 1%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+        transition: background-color 0.3s ease-in-out, scale 0.3s ease-in-out;
+
     }
 
 

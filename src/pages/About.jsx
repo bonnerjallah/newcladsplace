@@ -49,7 +49,7 @@ const About = () => {
           </p>
 
           <p className={aboutstyles.capitalizedParagraph}>
-            Welcome to something special. Welcome to the family — even if just for a little while
+            Welcome to something special. Welcome to the family — even if just for a little while.
           </p>
         </div>
         

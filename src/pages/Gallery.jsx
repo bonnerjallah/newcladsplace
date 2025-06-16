@@ -266,10 +266,10 @@ const Gallery = () => {
               <h1>The Ayo</h1>
               <details className={gallerystyle.roomDetails}>
                 <ul>
-                  <li>Master BedRoom: Queen Bed</li>
+                  <li>Master BedRoom: King Bed</li>
                   <li>Bathroom #1: In the masterBedroom</li>
-                  <li>Bedroom #2: Two full size beds</li>
-                  <li>Bathroom #2:</li>
+                  <li>Bathroom #2</li>
+                  <li>Bathroom #2: Queen Bed</li>
                   <li>Dining Room</li>
                   <li>Den</li>
                   <li>Full Kitchen</li>
@@ -308,8 +308,8 @@ const Gallery = () => {
               <h1>The Modu</h1>
               <details className={gallerystyle.roomDetails}>
                 <ul>
-                  <li>Master BedRoom: Queen Bed</li>
-                  <li>Bedroom #2: Two full size beds</li>
+                  <li>Master BedRoom: King Bed</li>
+                  <li>Bedroom #2: King Bed</li>
                   <li>Bathroom</li>
                   <li>Dining Room</li>
                   <li>Den</li>

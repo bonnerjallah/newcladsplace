@@ -59,7 +59,7 @@
 
 .welcome{
     position: absolute;
-    top: 25%;
+    top: 0%;
     display: flex;
     justify-content: center;
     width: 100%;
@@ -75,7 +75,7 @@
         opacity: 0;
     }
     100% {
-        top: 20%;
+        top: 0%;
         opacity: 1;
     }
 }
